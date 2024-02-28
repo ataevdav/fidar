@@ -1,0 +1,88 @@
+<h1>ШИФРЫ</h1>
+<h2>ШИФР ЦЕЗАРЯ</h2>
+<p><strong>Шифр Цезаря</strong> - моноалфавитный шифр подстановки, в котором каждая буква из&nbsp;открытого текста&nbsp;заменяется на такую букву, которая в алфавите&nbsp;находится на некотором постоянном числе позиций левее или правее от рассматриваемой буквы.</p>
+<p><img src="images/caesar_img.jpg" alt="caesar cipher" width="300" height="127" /></p>
+<p><strong>Пример:</strong></p>
+<p>Открытый текст:&nbsp;SOMETEXT</p>
+<p>Ключ: 5</p>
+<p>Зашифрованный текст: XTRJYJCY</p>
+<h2>КВАДРАТ&nbsp;ПОЛИБИЯ</h2>
+<p><strong>Квадрат Полибия</strong>&nbsp;- моноалфавитный шифр подстановки, в котором составляется таблица шифрования с определенным количеством пронумерованных строк и столбцов, параметры которой зависят от мощности (количества букв в алфавите) и для шифрования используются координаты буквы в таблице.</p>
+<p><img src="images/polybius_img.jpg" alt="polybius square" width="300" height="279" /></p>
+<p><strong>Пример:</strong></p>
+<p>Таблица:</p>
+<table style="width: 35px;" border="1">
+<tbody>
+<tr>
+<td style="width: 10px;">&nbsp;</td>
+<td style="width: 10.8194px;"><strong>1</strong></td>
+<td style="width: 10px;"><strong>2</strong></td>
+<td style="width: 10px;"><strong>3</strong></td>
+<td style="width: 10px;"><strong>4</strong></td>
+<td style="width: 10px;"><strong>5</strong></td>
+</tr>
+<tr>
+<td style="width: 10px;"><strong>1</strong></td>
+<td style="width: 10.8194px;">A</td>
+<td style="width: 10px;">B</td>
+<td style="width: 10px;">C</td>
+<td style="width: 10px;">D</td>
+<td style="width: 10px;">E</td>
+</tr>
+<tr>
+<td style="width: 10px;"><strong>2</strong></td>
+<td style="width: 10.8194px;">F</td>
+<td style="width: 10px;">G</td>
+<td style="width: 10px;">H</td>
+<td style="width: 10px;">I/J</td>
+<td style="width: 10px;">K</td>
+</tr>
+<tr>
+<td style="width: 10px;"><strong>3</strong></td>
+<td style="width: 10.8194px;">L</td>
+<td style="width: 10px;">M</td>
+<td style="width: 10px;">N</td>
+<td style="width: 10px;">O</td>
+<td style="width: 10px;">P</td>
+</tr>
+<tr>
+<td style="width: 10px;"><strong>4</strong></td>
+<td style="width: 10.8194px;">Q</td>
+<td style="width: 10px;">R</td>
+<td style="width: 10px;">S</td>
+<td style="width: 10px;">T</td>
+<td style="width: 10px;">U</td>
+</tr>
+<tr>
+<td style="width: 10px;"><strong>5</strong></td>
+<td style="width: 10.8194px;">V</td>
+<td style="width: 10px;">W</td>
+<td style="width: 10px;">X</td>
+<td style="width: 10px;">Y</td>
+<td style="width: 10px;">Z</td>
+</tr>
+</tbody>
+</table>
+<p>Открытый текст:&nbsp;SOMETEXT</p>
+<p>Зашифрованный текст: 34-25-23-51-44-51-35-44</p>
+<h2>ШИФР ВИЖЕНЕРА</h2>
+<p><strong>Квадрат Полибия</strong>&nbsp;- полиалфавитный шифр подстановки, в котором каждая буква сдвигается подобно шифру Цезаря с различным значением сдвига, зависящим от порядкового номера соответствующей буквы ключевого слова.</p>
+<p>Для удобства шифрования и дешифрования может использоваться tabula recta:</p>
+<p><img src="images/vigenere_img.jpg" alt="vigenere cipher" width="300" /></p>
+<p><strong>Пример:</strong></p>
+<p>Открытый текст: SOMETEXT</p>
+<p>Ключ: KEY</p>
+<p>Ключ для шифровки: KEYKEYKE</p>
+<p>Зашифрованный текст:&nbsp;CSKOXCHX</p>
+<h2>ШИФР ДЗИВГИС</h2>
+<p><strong>Шифр Дзивгис</strong> - шифр, комбинирующий шифр Виженера с работой с изображением. При шифровке&nbsp;используются первые 256 символов кодировки Unicode. Постоянный ключ представлен изображением в оттенках серого, где значение сдвига - цвет пикселя изображения ключа. Полученные числовые значения закодированных символов преобразуются в пиксели, которые случайным образом распределяются по изображению постоянного ключа, что в результате даёт шифр текст в виде изображения, и координаты этих пикселей в 16-ричной системе счисления формируют уникальный ключ (ключ дешифровки).</p>
+<p><strong>Пример:</strong></p>
+<p>Открытый текст: SOMETEXT</p>
+<p>Постоянный ключ (ключ-изображение):</p>
+<p><img src="images/ataty_img1.jpg" alt="dzivgis cipher" width="300"/></p>
+<p>Зашифрованный текст:&nbsp;</p>
+<p><img src="images/ataty_img2.jpg" alt="dzivgis cipher" width="300"/></p>
+<p>Уникальный ключ (ключ дешифровки):&nbsp;0007002f00260036001100560063005f0053003f0007004e0009000600450022</p>
+<p>Помимо криптографической составляющей шифр имеет также и стеганографическую, т. к. при&nbsp;использовании в качестве ключа изображения высокого разрешения для шифровки относительно небольшого открытого текста измененные пиксили будут малозаметны на изображении - результате шифровки.</p>
+<p><strong>P. S. - Историческая справка</strong></p>
+<p>Шифр назван в честь Дзивгисской горной крепости в Осетии, которая, по преданию, в XVI веке преградила путь завоевателю, персидскому шаху Аббасу I.</p>
